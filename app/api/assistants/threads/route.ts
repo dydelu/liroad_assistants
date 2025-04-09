@@ -11,7 +11,8 @@ const vectorStore = urlParams.get('vectorStore');
 // Create a new thread
 export async function POST() {
   const thread = await openai.beta.threads.create(
-tool_resources={
+messages=[ { "role": "user", "content": "How do I cancel my subscription?"} ],
+  tool_resources={
     "file_search": {
       "vector_store_ids": [`${vectorStore}`]
     }
