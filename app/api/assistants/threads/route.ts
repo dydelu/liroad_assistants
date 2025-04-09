@@ -13,7 +13,7 @@ export async function POST() {
   const thread = await openai.beta.threads.create(
 tool_resources={
     "file_search": {
-      "vector_store_ids": ["${vectorStore}"]
+      "vector_store_ids": [`${vectorStore}`]
     }
   }
   );
